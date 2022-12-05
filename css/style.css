@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+    .white-btn{
+        @apply mr-3 text-blue-600 border-[1px] px-3 py-2 bg-white border-blue-600 text-sm;
+    }
+    .pills{
+        @apply flex items-center px-4 py-3 mr-4 hover:bg-hsla rounded-full;
+    }
+    .pills-text{
+        @apply ml-3 text-sm;
+    }
+    .heading{
+        @apply text-2xl font-bold my-2;
+    }
+    .img-grid{
+        @apply absolute top-4 left-3 text-2xl font-bold text-white after:content-[url('https://cf.bstatic.com/static/img/flags/24/gb/b2f01d4fd94cb1420fcdbbef62c06ade1026fbbd.png')] after:ml-3;
+    }
+    .tabs-pills{
+        @apply px-4 py-3 mr-2 hover:bg-[rgba(0,0,0,0.06)] rounded-3xl;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body.modal-opened{
+    overflow: hidden;
+}
+
+.bannershadow {
+    background: linear-gradient(to right, #000 0, rgba(0, 0, 0, .4) 20%, transparent 70%), linear-gradient(to left, #000 0, transparent 20%);
+}
+
+.nav_tabs li a.active {
+    border: 1px solid #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.container {
+    max-width: 1140px;
+}
+
+.searchbox {
+    transform: translate(0%, -25px);
+    background-color: #febb02;
+}
+
+.owl-nav button.owl-prev {}
+
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel button.owl-dot {
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.16);
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    background-color: #ffffff;
+}
+
+.owl-carousel .owl-nav button.owl-next {
+    position: absolute;
+    top: calc(50% - 20px);
+    right: calc(0% - 20px);
+    z-index: 2;
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(0% - 20px);
+    z-index: 2;
+}
+
+.owl-carousel .owl-nav button.owl-next span,
+.owl-carousel .owl-nav button.owl-prev span {
+    font-size: 24px !important;
+    line-height: 10px;
+}
+
+.owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next{
+    display: block;
+}
+.owl-carousel .owl-nav button.owl-prev.disabled, .owl-carousel .owl-nav button.owl-next.disabled{
+    display: none;
+}
+.tab-contents .tabs-pane {
+    display: none;
+}
+
+.tab-contents .tabs-pane.active {
+    display: block;
+    animation: fadeIn 2s;
+}
+
+.tabs li a.active {
+    background-color: #F0F7FB;
+    color: #0071c2;
+    border: 1px solid #0071c2;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

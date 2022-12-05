@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <header class="nav bg-primary">
+    <div class="container mx-auto py-3 lg:pb-28">
+      <div class="flex justify-between items-center">
+        <svg class="lg:ml-6" height="24" width="144" viewBox="0 0 180 30" role="presentation" aria-hidden="true"
+          focusable="false">
+          <path fill="#fff"
+            d="M70.6 2.73999C70.602 2.19808 70.7646 1.66892 71.0673 1.21943C71.3701 0.769947 71.7993 0.420321 72.3007 0.214768C72.8021 0.00921437 73.3532 -0.0430342 73.8843 0.064629C74.4155 0.172292 74.9027 0.435032 75.2845 0.819622C75.6663 1.20421 75.9255 1.69338 76.0293 2.22527C76.133 2.75716 76.0768 3.30788 75.8676 3.80779C75.6584 4.3077 75.3056 4.73434 74.8539 5.03377C74.4022 5.3332 73.8719 5.49197 73.33 5.48999C72.9702 5.48868 72.6141 5.41651 72.2822 5.2776C71.9503 5.13869 71.649 4.93576 71.3955 4.6804C71.1419 4.42504 70.9412 4.12225 70.8047 3.78931C70.6683 3.45637 70.5987 3.09982 70.6 2.73999V2.73999ZM116.5 23.77C117.044 23.772 117.577 23.6124 118.031 23.3114C118.484 23.0104 118.838 22.5816 119.048 22.0793C119.257 21.577 119.313 21.0238 119.208 20.4897C119.103 19.9555 118.842 19.4646 118.458 19.079C118.074 18.6934 117.584 18.4305 117.05 18.3236C116.516 18.2167 115.963 18.2705 115.46 18.4784C114.957 18.6862 114.527 19.0387 114.224 19.4911C113.922 19.9436 113.76 20.4757 113.76 21.02C113.76 21.7476 114.048 22.4456 114.562 22.961C115.075 23.4764 115.772 23.7673 116.5 23.77V23.77ZM25.7 6.72999C24.0129 6.74775 22.3688 7.26426 20.9746 8.21447C19.5805 9.16469 18.4986 10.5061 17.8653 12.0699C17.2319 13.6337 17.0754 15.3499 17.4154 17.0025C17.7554 18.6551 18.5767 20.1701 19.776 21.3569C20.9752 22.5436 22.4988 23.349 24.1548 23.6717C25.8108 23.9944 27.5253 23.8199 29.0824 23.1702C30.6395 22.5205 31.9695 21.4247 32.9051 20.0206C33.8406 18.6166 34.3399 16.9672 34.34 15.28C34.3768 14.1396 34.1778 13.0038 33.7555 11.9438C33.3331 10.8839 32.6965 9.92248 31.8855 9.11989C31.0744 8.3173 30.1064 7.69078 29.0421 7.27955C27.9778 6.86831 26.84 6.68122 25.7 6.72999V6.72999ZM25.7 19.83C23.35 19.83 21.7 17.96 21.7 15.28C21.7 12.6 23.34 10.73 25.7 10.73C28.06 10.73 29.7 12.6 29.7 15.28C29.7 17.96 28.11 19.83 25.7 19.83ZM65.3 15.71C65.1321 15.3716 64.9128 15.0613 64.65 14.79L64.5 14.63L64.66 14.48C64.9116 14.2078 65.1423 13.917 65.35 13.61L69.74 7.05999H64.41L61.1 12.19C60.9586 12.3442 60.782 12.4621 60.5852 12.5334C60.3885 12.6048 60.1774 12.6277 59.97 12.6H59.22V2.90999C59.22 0.979993 58.01 0.709993 56.71 0.709993H54.48V23.58H59.21V16.72H59.65C60.19 16.72 60.56 16.78 60.73 17.08L63.35 21.97C63.5773 22.5089 63.9785 22.9563 64.4895 23.2408C65.0006 23.5253 65.5922 23.6306 66.17 23.54H69.8L67.09 19.07L65.3 15.71ZM88.27 6.68999C87.3747 6.67014 86.4851 6.83782 85.6584 7.18226C84.8318 7.5267 84.0863 8.04028 83.47 8.68999L83.18 8.97999L83.08 8.57999C82.9261 8.08803 82.6021 7.66692 82.166 7.39207C81.7299 7.11723 81.2102 7.0066 80.7 7.07999H78.57V23.57H83.29V15.97C83.275 15.2919 83.373 14.6159 83.58 13.97C83.7979 13.1302 84.2923 12.3883 84.9836 11.8639C85.6748 11.3396 86.5225 11.0634 87.39 11.08C88.85 11.08 89.39 11.85 89.39 13.86V21.05C89.335 21.3921 89.3619 21.7424 89.4686 22.072C89.5753 22.4017 89.7586 22.7013 90.0036 22.9463C90.2487 23.1914 90.5483 23.3747 90.878 23.4814C91.2076 23.5881 91.5579 23.615 91.9 23.56H94.12V13.07C94.15 8.89999 92.12 6.68999 88.27 6.68999V6.68999ZM73.39 7.05999H71.17V23.58H75.87V9.57999C75.9234 9.24041 75.8964 8.89304 75.7913 8.56576C75.6862 8.23848 75.5058 7.94038 75.2647 7.69537C75.0236 7.45037 74.7284 7.26527 74.4028 7.15493C74.0773 7.04459 73.7304 7.01208 73.39 7.05999V7.05999ZM44.16 6.72999C42.4729 6.74775 40.8288 7.26426 39.4346 8.21447C38.0405 9.16469 36.9586 10.5061 36.3253 12.0699C35.6919 13.6337 35.5354 15.3499 35.8754 17.0025C36.2154 18.6551 37.0367 20.1701 38.236 21.3569C39.4352 22.5436 40.9588 23.349 42.6148 23.6717C44.2708 23.9944 45.9853 23.8199 47.5424 23.1702C49.0995 22.5205 50.4295 21.4247 51.3651 20.0206C52.3006 18.6166 52.7999 16.9672 52.8 15.28C52.8368 14.1396 52.6378 13.0038 52.2155 11.9438C51.7931 10.8839 51.1565 9.92248 50.3455 9.11989C49.5344 8.3173 48.5664 7.69078 47.5021 7.27955C46.4378 6.86831 45.3 6.68122 44.16 6.72999V6.72999ZM44.16 19.83C41.81 19.83 40.16 17.96 40.16 15.28C40.16 12.6 41.8 10.73 44.16 10.73C46.52 10.73 48.16 12.6 48.16 15.28C48.16 17.96 46.57 19.83 44.16 19.83ZM144.89 6.72999C143.203 6.74775 141.559 7.26426 140.165 8.21447C138.77 9.16469 137.689 10.5061 137.055 12.0699C136.422 13.6337 136.265 15.3499 136.605 17.0025C136.945 18.6551 137.767 20.1701 138.966 21.3569C140.165 22.5436 141.689 23.349 143.345 23.6717C145.001 23.9944 146.715 23.8199 148.272 23.1702C149.829 22.5205 151.16 21.4247 152.095 20.0206C153.031 18.6166 153.53 16.9672 153.53 15.28C153.567 14.1396 153.368 13.0038 152.945 11.9438C152.523 10.8839 151.887 9.92248 151.075 9.11989C150.264 8.3173 149.296 7.69078 148.232 7.27955C147.168 6.86831 146.03 6.68122 144.89 6.72999V6.72999ZM144.89 19.83C142.54 19.83 140.89 17.96 140.89 15.28C140.89 12.6 142.53 10.73 144.89 10.73C147.25 10.73 148.89 12.6 148.89 15.28C148.89 17.96 147.3 19.83 144.89 19.83ZM109.74 7.01999C109.356 6.98285 108.97 7.05749 108.627 7.23491C108.285 7.41233 108.001 7.68497 107.81 8.01999L107.69 8.26999L107.47 8.07999C106.253 7.08344 104.711 6.57072 103.14 6.63999C98.75 6.63999 95.78 9.94999 95.78 14.87C95.78 19.79 98.85 23.22 103.23 23.22C104.521 23.2791 105.795 22.9061 106.85 22.16L107.21 21.88V22.34C107.21 24.55 105.78 25.77 103.21 25.77C102.131 25.755 101.062 25.5555 100.05 25.18C99.8562 25.0813 99.6419 25.0295 99.4244 25.0287C99.2069 25.0279 98.9923 25.0782 98.7977 25.1754C98.6032 25.2727 98.4342 25.4143 98.3043 25.5887C98.1745 25.7632 98.0874 25.9657 98.05 26.18L97.14 28.46L97.47 28.63C99.2593 29.5195 101.232 29.9783 103.23 29.97C107.23 29.97 111.9 27.91 111.9 22.14V7.01999H109.74ZM104.06 19.11C101.5 19.11 100.58 16.86 100.58 14.76C100.58 13.83 100.81 10.76 103.81 10.76C105.3 10.76 107.3 11.18 107.3 14.86C107.3 18.38 105.54 19.11 104.06 19.11ZM13.09 11.85L12.4 11.47L13 10.97C13.6103 10.4334 14.0951 9.76919 14.42 9.02435C14.7449 8.27951 14.9019 7.47231 14.88 6.65999C14.88 3.05999 12.09 0.739993 7.79 0.739993H2.31C1.69606 0.762953 1.11431 1.02048 0.684566 1.45953C0.254821 1.89857 0.00981021 2.48571 0 3.09999L0 23.5H7.88C12.67 23.5 15.77 20.89 15.77 16.84C15.8104 15.8446 15.583 14.8566 15.1116 13.9789C14.6403 13.1012 13.9421 12.3661 13.09 11.85V11.85ZM4.37 6.07999C4.37 5.01999 4.82 4.51999 5.8 4.45999H7.8C8.16093 4.42761 8.52456 4.47504 8.8651 4.59892C9.20565 4.7228 9.51476 4.9201 9.77052 5.17681C10.0263 5.43353 10.2224 5.74338 10.345 6.08438C10.4676 6.42538 10.5137 6.78919 10.48 7.14999C10.5194 7.51629 10.4791 7.88679 10.3616 8.23598C10.2442 8.58517 10.0524 8.90477 9.79964 9.17277C9.54684 9.44077 9.23898 9.65082 8.89723 9.78844C8.55549 9.92606 8.18798 9.988 7.82 9.96999H4.37V6.07999ZM8.2 19.64H4.37V15.06C4.37 14.06 4.76 13.57 5.59 13.45H8.2C8.99043 13.4949 9.7337 13.8406 10.2774 14.4161C10.8211 14.9916 11.124 15.7533 11.124 16.545C11.124 17.3367 10.8211 18.0984 10.2774 18.6739C9.7337 19.2494 8.99043 19.595 8.2 19.64ZM174.53 6.73999C173.558 6.74366 172.6 6.96575 171.726 7.38984C170.852 7.81393 170.084 8.42915 169.48 9.18999L169.14 9.62999L168.87 9.13999C168.437 8.355 167.787 7.71128 166.998 7.2857C166.209 6.86012 165.314 6.67067 164.42 6.73999C163.604 6.75328 162.798 6.93308 162.054 7.26838C161.309 7.60368 160.641 8.08742 160.09 8.68999L159.65 9.16999L159.48 8.53999C159.323 8.07152 159.008 7.67282 158.587 7.41334C158.167 7.15386 157.669 7.05005 157.18 7.11999H155.18V23.57H159.64V16.31C159.646 15.6629 159.727 15.0187 159.88 14.39C160.31 12.63 161.49 10.74 163.47 10.93C164.69 11.05 165.29 11.99 165.29 13.82V23.57H169.81V16.31C169.791 15.6345 169.875 14.9601 170.06 14.31C170.42 12.64 171.65 10.92 173.56 10.92C174.94 10.92 175.45 11.7 175.45 13.81V21.17C175.45 22.83 176.19 23.57 177.85 23.57H180V13.07C180 8.86999 178.15 6.73999 174.53 6.73999ZM133.69 17.86C132.51 19.095 130.913 19.8471 129.21 19.97C128.593 20.0073 127.974 19.914 127.395 19.6962C126.816 19.4784 126.29 19.141 125.85 18.706C125.41 18.271 125.067 17.7482 124.843 17.1716C124.619 16.5951 124.519 15.9778 124.55 15.36C124.498 14.7504 124.575 14.1365 124.776 13.5588C124.978 12.981 125.299 12.4524 125.719 12.0076C126.14 11.5629 126.649 11.212 127.215 10.978C127.78 10.744 128.388 10.6322 129 10.65C129.84 10.65 130.8 10.95 130.95 11.46V11.55C131.048 11.8986 131.258 12.2056 131.547 12.424C131.835 12.6425 132.188 12.7605 132.55 12.76H135V10.61C135 7.76999 131.39 6.73999 129 6.73999C123.81 6.73999 120 10.37 120 15.35C120 20.33 123.73 23.97 128.86 23.97C130.178 23.9562 131.479 23.6722 132.683 23.1355C133.887 22.5989 134.969 21.821 135.86 20.85L134 17.58L133.69 17.86Z">
+          </path>
+        </svg>
+        <div class="lg:flex justify-between items-center hidden">
+          <a href="" class="text-white hover:bg-hsla p-3">INR</a>
+          <a href="" class="hover:bg-hsla p-3"><img class="rounded-full w-7"
+              src="https://cf.bstatic.com/static/img/flags/new/48-squared/in/20aa535a5d3c505dd02fea275ed1a36c0fb1fe08.png"
+              alt=""></a>
+          <a href="" class="hover:bg-hsla p-3"><svg class="fill-white" height="24" width="24" viewBox="0 0 24 24"
+              role="presentation" aria-hidden="true" focusable="false">
+              <path
+                d="M9.75 9a2.25 2.25 0 1 1 3 2.122 2.25 2.25 0 0 0-1.5 2.122v1.006a.75.75 0 0 0 1.5 0v-1.006c0-.318.2-.602.5-.708A3.75 3.75 0 1 0 8.25 9a.75.75 0 1 0 1.5 0zM12 16.5a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5zM22.5 12c0 5.799-4.701 10.5-10.5 10.5S1.5 17.799 1.5 12 6.201 1.5 12 1.5 22.5 6.201 22.5 12zm1.5 0c0-6.627-5.373-12-12-12S0 5.373 0 12s5.373 12 12 12 12-5.373 12-12z">
+              </path>
+            </svg></a>
+          <a href="javascript:void(0)"
+            class="mx-3 text-white border-[1px] px-3 py-2 border-white hover:bg-hsla text-sm font-semibold">List Your
+            Property</a>
+          <a href="javascript:void(0)"
+            class="white-btn">Register</a>
+          <a href="javascript:void(0)"
+            class="white-btn">Sign In</a>
+        </div>
+        <div class="flex lg:hidden items-center">
+          <a href="javascript:void(0)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff"
+              class="bi bi-person-circle m-2" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+              <path fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+            </svg></a>
+          <a href="javascript:void(0)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff"
+              class="bi bi-list open-modal mx-1 my-3" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg></a>
+        </div>
+      </div>
+      <ul class="flex items-center text-white nav_tabs overflow-auto nav">
+        <li>
+          <a href="javascript:void(0)" class="active pills">
+            <svg class="fill-white" height="20" width="20" viewBox="0 0 24 24" role="presentation" aria-hidden="true"
+              focusable="false">
+              <path
+                d="M2.75 12h18.5c.69 0 1.25.56 1.25 1.25V18l.75-.75H.75l.75.75v-4.75c0-.69.56-1.25 1.25-1.25zm0-1.5A2.75 2.75 0 0 0 0 13.25V18c0 .414.336.75.75.75h22.5A.75.75 0 0 0 24 18v-4.75a2.75 2.75 0 0 0-2.75-2.75H2.75zM0 18v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 0 18zm22.5 0v3a.75.75 0 0 0 1.5 0v-3a.75.75 0 0 0-1.5 0zm-.75-6.75V4.5a2.25 2.25 0 0 0-2.25-2.25h-15A2.25 2.25 0 0 0 2.25 4.5v6.75a.75.75 0 0 0 1.5 0V4.5a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 0 1.5 0zm-13.25-3h7a.25.25 0 0 1 .25.25v2.75l.75-.75h-9l.75.75V8.5a.25.25 0 0 1 .25-.25zm0-1.5A1.75 1.75 0 0 0 6.75 8.5v2.75c0 .414.336.75.75.75h9a.75.75 0 0 0 .75-.75V8.5a1.75 1.75 0 0 0-1.75-1.75h-7z">
+              </path>
+            </svg>
+            <span class="pills-text">Stays</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class=" pills">
+            <svg class="fill-white" height="20" width="20" viewBox="0 0 24 24" role="presentation" aria-hidden="true"
+              focusable="false">
+              <path
+                d="M2.75 12h18.5c.69 0 1.25.56 1.25 1.25V18l.75-.75H.75l.75.75v-4.75c0-.69.56-1.25 1.25-1.25zm0-1.5A2.75 2.75 0 0 0 0 13.25V18c0 .414.336.75.75.75h22.5A.75.75 0 0 0 24 18v-4.75a2.75 2.75 0 0 0-2.75-2.75H2.75zM0 18v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 0 18zm22.5 0v3a.75.75 0 0 0 1.5 0v-3a.75.75 0 0 0-1.5 0zm-.75-6.75V4.5a2.25 2.25 0 0 0-2.25-2.25h-15A2.25 2.25 0 0 0 2.25 4.5v6.75a.75.75 0 0 0 1.5 0V4.5a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 0 1.5 0zm-13.25-3h7a.25.25 0 0 1 .25.25v2.75l.75-.75h-9l.75.75V8.5a.25.25 0 0 1 .25-.25zm0-1.5A1.75 1.75 0 0 0 6.75 8.5v2.75c0 .414.336.75.75.75h9a.75.75 0 0 0 .75-.75V8.5a1.75 1.75 0 0 0-1.75-1.75h-7z">
+              </path>
+            </svg>
+            <span class="pills-text">Stays</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class=" pills">
+            <svg class="fill-white" height="20" width="20" viewBox="0 0 24 24" role="presentation" aria-hidden="true"
+              focusable="false">
+              <path
+                d="M2.75 12h18.5c.69 0 1.25.56 1.25 1.25V18l.75-.75H.75l.75.75v-4.75c0-.69.56-1.25 1.25-1.25zm0-1.5A2.75 2.75 0 0 0 0 13.25V18c0 .414.336.75.75.75h22.5A.75.75 0 0 0 24 18v-4.75a2.75 2.75 0 0 0-2.75-2.75H2.75zM0 18v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 0 18zm22.5 0v3a.75.75 0 0 0 1.5 0v-3a.75.75 0 0 0-1.5 0zm-.75-6.75V4.5a2.25 2.25 0 0 0-2.25-2.25h-15A2.25 2.25 0 0 0 2.25 4.5v6.75a.75.75 0 0 0 1.5 0V4.5a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 0 1.5 0zm-13.25-3h7a.25.25 0 0 1 .25.25v2.75l.75-.75h-9l.75.75V8.5a.25.25 0 0 1 .25-.25zm0-1.5A1.75 1.75 0 0 0 6.75 8.5v2.75c0 .414.336.75.75.75h9a.75.75 0 0 0 .75-.75V8.5a1.75 1.75 0 0 0-1.75-1.75h-7z">
+              </path>
+            </svg>
+            <span class="pills-text">Stays</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class=" pills">
+            <svg class="fill-white" height="20" width="20" viewBox="0 0 24 24" role="presentation" aria-hidden="true"
+              focusable="false">
+              <path
+                d="M2.75 12h18.5c.69 0 1.25.56 1.25 1.25V18l.75-.75H.75l.75.75v-4.75c0-.69.56-1.25 1.25-1.25zm0-1.5A2.75 2.75 0 0 0 0 13.25V18c0 .414.336.75.75.75h22.5A.75.75 0 0 0 24 18v-4.75a2.75 2.75 0 0 0-2.75-2.75H2.75zM0 18v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 0 18zm22.5 0v3a.75.75 0 0 0 1.5 0v-3a.75.75 0 0 0-1.5 0zm-.75-6.75V4.5a2.25 2.25 0 0 0-2.25-2.25h-15A2.25 2.25 0 0 0 2.25 4.5v6.75a.75.75 0 0 0 1.5 0V4.5a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 0 1.5 0zm-13.25-3h7a.25.25 0 0 1 .25.25v2.75l.75-.75h-9l.75.75V8.5a.25.25 0 0 1 .25-.25zm0-1.5A1.75 1.75 0 0 0 6.75 8.5v2.75c0 .414.336.75.75.75h9a.75.75 0 0 0 .75-.75V8.5a1.75 1.75 0 0 0-1.75-1.75h-7z">
+              </path>
+            </svg>
+            <span class="pills-text">Stays</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class=" pills">
+            <svg class="fill-white" height="20" width="20" viewBox="0 0 24 24" role="presentation" aria-hidden="true"
+              focusable="false">
+              <path
+                d="M2.75 12h18.5c.69 0 1.25.56 1.25 1.25V18l.75-.75H.75l.75.75v-4.75c0-.69.56-1.25 1.25-1.25zm0-1.5A2.75 2.75 0 0 0 0 13.25V18c0 .414.336.75.75.75h22.5A.75.75 0 0 0 24 18v-4.75a2.75 2.75 0 0 0-2.75-2.75H2.75zM0 18v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 0 18zm22.5 0v3a.75.75 0 0 0 1.5 0v-3a.75.75 0 0 0-1.5 0zm-.75-6.75V4.5a2.25 2.25 0 0 0-2.25-2.25h-15A2.25 2.25 0 0 0 2.25 4.5v6.75a.75.75 0 0 0 1.5 0V4.5a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 0 1.5 0zm-13.25-3h7a.25.25 0 0 1 .25.25v2.75l.75-.75h-9l.75.75V8.5a.25.25 0 0 1 .25-.25zm0-1.5A1.75 1.75 0 0 0 6.75 8.5v2.75c0 .414.336.75.75.75h9a.75.75 0 0 0 .75-.75V8.5a1.75 1.75 0 0 0-1.75-1.75h-7z">
+              </path>
+            </svg>
+            <span class="pills-text">Stays</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class="pills">
+            <svg class="fill-white" height="20" width="20" viewBox="0 0 24 24" role="presentation" aria-hidden="true"
+              focusable="false">
+              <path
+                d="M2.75 12h18.5c.69 0 1.25.56 1.25 1.25V18l.75-.75H.75l.75.75v-4.75c0-.69.56-1.25 1.25-1.25zm0-1.5A2.75 2.75 0 0 0 0 13.25V18c0 .414.336.75.75.75h22.5A.75.75 0 0 0 24 18v-4.75a2.75 2.75 0 0 0-2.75-2.75H2.75zM0 18v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 0 18zm22.5 0v3a.75.75 0 0 0 1.5 0v-3a.75.75 0 0 0-1.5 0zm-.75-6.75V4.5a2.25 2.25 0 0 0-2.25-2.25h-15A2.25 2.25 0 0 0 2.25 4.5v6.75a.75.75 0 0 0 1.5 0V4.5a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 0 1.5 0zm-13.25-3h7a.25.25 0 0 1 .25.25v2.75l.75-.75h-9l.75.75V8.5a.25.25 0 0 1 .25-.25zm0-1.5A1.75 1.75 0 0 0 6.75 8.5v2.75c0 .414.336.75.75.75h9a.75.75 0 0 0 .75-.75V8.5a1.75 1.75 0 0 0-1.75-1.75h-7z">
+              </path>
+            </svg>
+            <span class="pills-text">Stays</span>
+          </a>
+        </li>
+      </ul>
+      <h1 class="text-5xl text-white mt-11 font-bold hidden lg:block">Find your next stay</h1>
+      <h3 class="text-2xl text-white mt-3 hidden lg:block">Search low prices on hotels, homes and much more...</h3>
+    </div>
+  </header>
+
+  <section class="lg:hidden">
+    <div class="container md:w-[70%] mx-auto">
+      <h1 class="heading">Search</h1>
+      <p class="text-[#6b6b6b] text-base font-normal mb-2">Destinations, properties, even an address </p>
+      <div class="bg-[#febb02] p-1 flex flex-wrap items-center">
+        <div class="flex w-full bg-white p-3 items-center mb-1">
+          <img
+            src="https://t-cf.bstatic.com/static/img/cross_product_index/accommodation/07ca5cacc9d77a7b50ca3c424ecd606114d9be75.svg"
+            alt="">
+          <input type="text" class="w-full border-none focus:outline-none ml-5" placeholder="Where are you Going?">
+        </div>
+        <div class="w-[50%]">
+          <div class="flex bg-white p-3 items-center mb-1 mr-1">
+            <svg aria-hidden="true" class="w-[25%]" fill="#BDBDBD" focusable="false" height="20" role="presentation"
+              width="20" viewBox="0 0 128 128">
+              <path
+                d="m112 16h-16v-8h-8v8h-48v-8h-8v8h-16c-4.4 0-8 3.9-8 8.7v86.6c0 4.8 3.6 8.7 8 8.7h96c4.4 0 8-3.9 8-8.7v-86.6c0-4.8-3.6-8.7-8-8.7zm0 95.3a1.1 1.1 0 0 1 -.2.7h-95.6a1.1 1.1 0 0 1 -.2-.7v-71.3h96zm-68-43.3h-12v-12h12zm0 28h-12v-12h12zm26-28h-12v-12h12zm0 28h-12v-12h12zm26 0h-12v-12h12zm0-28h-12v-12h12z"
+                fill-rule="evenodd"></path>
+            </svg>
+            <input type="text" class="w-full border-none focus:outline-none ml-3" placeholder="Check-in" id="checkin">
+          </div>
+        </div>
+        <div class="flex w-[50%] bg-white p-3 items-center mb-1">
+          <svg aria-hidden="true" class="w-[25%]" fill="#BDBDBD" focusable="false" height="20" role="presentation"
+            width="20" viewBox="0 0 128 128">
+            <path
+              d="m112 16h-16v-8h-8v8h-48v-8h-8v8h-16c-4.4 0-8 3.9-8 8.7v86.6c0 4.8 3.6 8.7 8 8.7h96c4.4 0 8-3.9 8-8.7v-86.6c0-4.8-3.6-8.7-8-8.7zm0 95.3a1.1 1.1 0 0 1 -.2.7h-95.6a1.1 1.1 0 0 1 -.2-.7v-71.3h96zm-68-43.3h-12v-12h12zm0 28h-12v-12h12zm26-28h-12v-12h12zm0 28h-12v-12h12zm26 0h-12v-12h12zm0-28h-12v-12h12z"
+              fill-rule="evenodd"></path>
+          </svg>
+          <input type="text" class="w-full border-none focus:outline-none ml-3" placeholder="Check-out" id="checkin">
+        </div>
+        <div class="flex w-full bg-white p-3 items-center mb-1">
+          <img
+            src="https://t-cf.bstatic.com/static/img/cross_product_index/guest/b2e5f2aa32b71ca0fc66aa671e4e958bcd69b7d0.svg"
+            alt="">
+          <input type="text" class="w-full border-none focus:outline-none ml-5" placeholder="2 Adults">
+        </div>
+        <div class="bg-white w-full p-3 flex items-center mb-1">
+          <input type="checkbox" class="w-5 h-5" name="" id=""> <span class="ml-2">I'm travelling for work </span>
+        </div>
+        <a href="#" class="bg-[#0d6efd] p-3 w-full text-center text-white">Search</a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="hidden lg:block">
+    <div class="container searchbox flex items-center mx-auto p-1">
+
+      <div class="flex w-[40%] bg-white p-3 mr-1 items-center">
+        <img
+          src="https://t-cf.bstatic.com/static/img/cross_product_index/accommodation/07ca5cacc9d77a7b50ca3c424ecd606114d9be75.svg"
+          alt="">
+        <input type="text" class="w-full border-none focus:outline-none ml-5" placeholder="Where are you Going?">
+      </div>
+
+      <div class="flex w-[30%] bg-white p-3 mr-1 items-center">
+        <svg aria-hidden="true" class="w-[10%]" fill="#BDBDBD" focusable="false" height="20" role="presentation"
+          width="20" viewBox="0 0 128 128">
+          <path
+            d="m112 16h-16v-8h-8v8h-48v-8h-8v8h-16c-4.4 0-8 3.9-8 8.7v86.6c0 4.8 3.6 8.7 8 8.7h96c4.4 0 8-3.9 8-8.7v-86.6c0-4.8-3.6-8.7-8-8.7zm0 95.3a1.1 1.1 0 0 1 -.2.7h-95.6a1.1 1.1 0 0 1 -.2-.7v-71.3h96zm-68-43.3h-12v-12h12zm0 28h-12v-12h12zm26-28h-12v-12h12zm0 28h-12v-12h12zm26 0h-12v-12h12zm0-28h-12v-12h12z"
+            fill-rule="evenodd"></path>
+        </svg>
+        <input type="text" class="w-[40%] border-none focus:outline-none ml-3" placeholder="Check-in" id="checkin">
+        <input type="text" class="w-[40%] border-none focus:outline-none ml-3" placeholder="Check-out" id="checkout">
+      </div>
+
+      <div class="flex w-[20%] bg-white p-3 mr-1 items-center">
+        <img
+          src="https://t-cf.bstatic.com/static/img/cross_product_index/guest/b2e5f2aa32b71ca0fc66aa671e4e958bcd69b7d0.svg"
+          alt="">
+        <input type="text" class="w-full border-none focus:outline-none ml-5" placeholder="2 Adults">
+      </div>
+
+      <a href="#" class="bg-[#0d6efd] p-3 w-[10%] text-center text-white">Search</a>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="hidden lg:block">
+        <input type="checkbox" class="w-5 h-5" name="" id=""> <span class="ml-2">I'm travelling for work </span>
+      </div>
+      <h1 class="heading">Offers</h1>
+      <p class="text-[#6b6b6b] text-base font-normal mb-2">Promotions, deals and special offers for you</p>
+
+      <div class="owl-carousel offers-carousel owl-theme relative z-0">
+        <div class="item p-1">
+          <div class="relative object-cover overflow-hidden h-[180px] rounded-2xl shadow-custom">
+            <img
+              src="https://q-xx.bstatic.com/xdata/images/xphoto/714x300/173282684.jpeg?k=e31b490d521194e65d41490f43dc704291ca07eaa762b6f36bca714d3211b9a1&o="
+              class="h-full" alt="">
+            <div class="absolute top-5 left-5 text-white">
+              <h1 class="text-base font-bold">Save 15% with Late Escape Deals</h1>
+              <h3 class="text-base font-medium mb-5">Tick one more destination off your wishlist</h3>
+              <a href="#" class="bg-[#0d6efd] text-center text-white p-3">Explore deals</a>
+            </div>
+          </div>
+        </div>
+        <div class="item p-1">
+          <div class="relative object-cover overflow-hidden h-[180px] rounded-2xl shadow-custom">
+            <div class="absolute top-5 left-5 flex">
+              <div class="lg:w-[70%]">
+                <h1 class="text-base font-bold">Every part of your trip in one app</h1>
+                <h3 class="text-base font-medium mb-5">Find the best accommodations, flights and more on the free
+                  Booking.com app.</h3>
+                <a href="#" class="bg-[#0d6efd] text-center text-white p-3">Get the app</a>
+              </div>
+              <img class="!hidden lg:!block !w-[30%] float-right"
+                src="https://r-xx.bstatic.com/xdata/images/xphoto/500x500/178968129.jpeg?k=52539cb8ac165dd6904836ac7f5474223f043df7ef00a7ad1f5feb35d2384613&o="
+                alt="">
+            </div>
+          </div>
+        </div>
+        <div class="item p-1">
+          <div class="relative object-cover overflow-hidden h-[180px] rounded-2xl shadow-custom">
+            <img src="https://q-xx.bstatic.com/psb/capla/static/media/long_stays_banner_wide.a1b12d47.png"
+              class="h-full" alt="">
+            <div class="absolute top-5 left-5 text-white">
+              <h1 class="text-base font-bold">Save 15% with Late Escape Deals</h1>
+              <h3 class="text-base font-medium mb-5">Tick one more destination off your wishlist</h3>
+              <a href="#" class="bg-[#0d6efd] text-center text-white p-3">Explore deals</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <h1 class="heading">Explore India</h1>
+      <p class="text-[#6b6b6b] text-base font-normal mb-2">These popular destinations have a lot to offer</p>
+
+      <div class="owl-carousel places-carousel owl-theme relative z-0">
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <h1 class="heading">Browse by property type</h1>
+
+      <div class="owl-carousel property-carousel owl-theme relative z-0">
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container mt-6">
+      <div class="md:columns-2 lg:columns-2">
+        <div class="relative">
+          <img class="w-full mb-3"
+            src="https://cf.bstatic.com/xdata/images/city/540x270/687157.webp?k=06b9ded0733baaca9efaa06a69ae4d0d74311d620280947ae909015e804028fb&o="
+            alt="">
+          <h1
+            class="img-grid">
+            Manchester</h1>
+        </div>
+        <div class="relative">
+          <img class="w-full mb-3"
+            src="https://cf.bstatic.com/xdata/images/city/540x270/687080.webp?k=c88fb97fd92fcd30079f5a46d39bbee03c34e769b212514bd09aa31954ab820f&o="
+            alt="">
+          <h1
+            class="img-grid">
+            Leeds</h1>
+        </div>
+      </div>
+      <div class="md:columns-2 lg:columns-3">
+        <div class="relative">
+          <img class="w-full mb-3 lg:mb-0"
+            src="https://cf.bstatic.com/xdata/images/city/540x270/687390.webp?k=bd88fa5d6426847a71e5e119fef3ffd78d490b64bb212350400cc9cb74544da0&o="
+            alt="">
+          <h1
+            class="img-grid">
+            Reading</h1>
+        </div>
+        <div class="relative">
+          <img class="w-full mb-3 lg:mb-0"
+            src="https://cf.bstatic.com/xdata/images/city/540x270/687285.webp?k=84f6f2377af1738b4ee29fccea1af65634fe4258712f96f54491c08f1d026a95&o="
+            alt="">
+          <h1
+            class="img-grid">
+            Newcastle upon Tyne</h1>
+        </div>
+        <div class="relative">
+          <img class="w-full mb-3 lg:mb-0"
+            src="https://cf.bstatic.com/xdata/images/city/540x270/967919.webp?k=de3609fd5bbb0eead49d41a6d7edeb731376d0c89e372bce4fce6d80c64991a5&o="
+            alt="">
+          <h1
+            class="img-grid">
+            Birmingham</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h1 class="heading">Travel around Asia</h1>
+      <p class="text-[#6b6b6b] text-base font-normal mb-2">Explore more places we think you'll love</p>
+      <div class="travel_tabs">
+        <ul class="tabs flex items-center my-4">
+          <li><a href="javascript:void(0)" class="tabs-pills active"
+              data-id="beach">Beach</a></li>
+          <li><a href="javascript:void(0)" class="tabs-pills"
+              data-id="outdoors">Outdoors</a></li>
+          <li><a href="javascript:void(0)" class="tabs-pills"
+              data-id="relax">Relax</a></li>
+          <li><a href="javascript:void(0)" class="tabs-pills"
+              data-id="city">City</a></li>
+        </ul>
+        <div class="tab-contents">
+          <div class="tabs-pane" id="beach">
+            <div class="owl-carousel beach-carousel owl-theme relative z-0">
+            </div>
+          </div>
+          <div class="tabs-pane" id="outdoors">
+            <div class="owl-carousel outdoors-carousel owl-theme relative z-0">
+            </div>
+          </div>
+          <div class="tabs-pane" id="relax">
+            <div class="owl-carousel relax-carousel owl-theme relative z-0">
+            </div>
+          </div>
+          <div class="tabs-pane" id="city">
+            <div class="owl-carousel city-carousel owl-theme relative z-0">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container mt-6 hidden lg:block">
+      <div class="lg:columns-3">
+        <div class="relative">
+          <img class="w-full h-[270px] object-cover mb-3"
+            src="https://cf.bstatic.com/xdata/images/xphoto/700x350/181912109.webp?k=dc150994e53938fbfd4205914021f0d35c2a401ad8869e06db7cf9ab9206d85a&o="
+            alt="">
+          <div class="absolute bottom-8 left-5 text-white ">
+            <h1 class="text-2xl font-bold">
+              Europe’s 10 most festive Christmas markets</h1>
+            <p class="text-sm font-normal">Featuring captivating old towns, gold-painted statues and epic carnivals.</p>
+          </div>
+        </div>
+        <div class="relative">
+          <img class="w-full h-[270px] object-cover mb-3"
+            src="https://cf.bstatic.com/xdata/images/xphoto/540x405/180173480.webp?k=6ea6aa39bf8daaf82862915b72888bcf8ce68f0641053f336fcdd9d842b29d9d&o="
+            alt="">
+          <div class="absolute bottom-8 left-5 text-white ">
+            <h1 class="text-2xl font-bold">
+              Europe’s 10 most festive Christmas markets</h1>
+            <p class="text-sm font-normal">Featuring captivating old towns, gold-painted statues and epic carnivals.</p>
+          </div>
+        </div>
+        <div class="relative">
+          <img class="w-full h-[270px] object-cover mb-3"
+            src="https://cf.bstatic.com/xdata/images/xphoto/540x405/179387104.webp?k=3c39d24e157347fdd5f7784bca95a09c8c27627b97ac58f70e5965dabc70f2d2&o="
+            alt="">
+          <div class="absolute bottom-8 left-5 text-white ">
+            <h1 class="text-2xl font-bold">
+              Europe’s 10 most festive Christmas markets</h1>
+            <p class="text-sm font-normal">Featuring captivating old towns, gold-painted statues and epic carnivals.</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:columns-2">
+        <div class="relative">
+          <img class="w-full h-[270px] object-cover mb-3 lg:mb-0"
+            src="https://cf.bstatic.com/xdata/images/xphoto/540x405/178896679.webp?k=21164af35fafc549296411e1e8d912043e1e5b4bff25b597e573df634caec7d9&o="
+            alt="">
+          <div class="absolute bottom-8 left-5 text-white ">
+            <h1 class="text-2xl font-bold">
+              Europe’s 10 most festive Christmas markets</h1>
+            <p class="text-sm font-normal">Featuring captivating old towns, gold-painted statues and epic carnivals.</p>
+          </div>
+        </div>
+        <div class="relative">
+          <img class="w-full h-[270px] object-cover mb-3 lg:mb-0"
+            src="https://cf.bstatic.com/xdata/images/xphoto/540x405/177969876.webp?k=86fa40fd3854833d1454959cda97f034740bc5013f760c637fb12abe821790f3&o="
+            alt="">
+          <div class="absolute bottom-8 left-5 text-white ">
+            <h1 class="text-2xl font-bold">
+              Europe’s 10 most festive Christmas markets</h1>
+            <p class="text-sm font-normal">Featuring captivating old towns, gold-painted statues and epic carnivals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h1 class="heading">Explore India</h1>
+      <p class="text-[#6b6b6b] text-base font-normal mb-2">These popular destinations have a lot to offer</p>
+
+      <div class="owl-carousel home-carousel owl-theme relative z-0">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container hidden lg:block">
+      <div
+        class="flex p-3 border border-[#e7e7e7] bg-[url('https://cf.bstatic.com/static/img/genius-banner-world-bg/2b5cdbad7b92073bc396b8b59d0bb421b3a01cba.png')] bg-no-repeat bg-right">
+        <div class="w-[25%]">
+          <img
+            src="https://cf.bstatic.com/static/img/genius-globe-with-badge_desktop/d807514761b3684aedebced9265c5548a063b7a0.png"
+            alt="">
+        </div>
+        <div class="w-[40%]">
+          <h1 class="font-bold text-2xl">Get instant discounts</h1>
+          <p class="font-normal text-base">Simply sign into your Booking.com account and look for the blue Genius logo
+            to save</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container hidden lg:block">
+      <h1 class="heading">Destinations we love</h1>
+      <div class="destination_tabs">
+        <ul class="tabs flex items-center my-4">
+          <li><a href="javascript:void(0)" class="tabs-pills active"
+              data-id="regions">regions</a></li>
+          <li><a href="javascript:void(0)" class="tabs-pills"
+              data-id="cities">cities</a></li>
+          <li><a href="javascript:void(0)" class="tabs-pills"
+              data-id="poi">Place of Intrest</a></li>
+        </ul>
+        <div class="tab-contents">
+          <div class="tabs-pane" id="regions">
+            <ul class="flex flex-row flex-wrap">
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+            </ul>
+          </div>
+          <div class="tabs-pane" id="cities">
+            <ul class="flex flex-row flex-wrap">
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+            </ul>
+          </div>
+          <div class="tabs-pane" id="poi">
+            <ul class="flex flex-row flex-wrap">
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+              <li class="flex flex-col items-start flex-2 m-3">
+                <h1 class="font-medium text-base">An item</h1>
+                <p>1 property </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#00224f]">
+    <div class="container">
+      <div class="w-full m-auto text-center py-4">
+        <h1 class="text-white text-3xl font-bold mb-4">Save time, save money!</h1>
+        <p class="text-white mb-4">Sign up and we'll send the best deals to you </p>
+        <div class="d-flex align-items-center justify-content-center">
+          <input class="p-4 w-[60%] lg:w-[40%] leading-none focus:outline-none" type="text" placeholder="Your Email">
+          <a href="javascript:void(0)" class="bg-[#0071c2] text-center text-white p-4">Subscribe</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="bg-[#003580] border-b border-white">
+      <div class="container">
+        <div class="w-full text-center py-6">
+          <a href="#" class="text-white border border-white p-2 rounded-md">List Your
+            Property</a>
+        </div>
+      </div>
+    </div>
+    <div class="bg-[#003580] footernav py-2">
+      <div class="container">
+        <div class="text-center">
+          <a class="underline text-white p-2 inline-block">Mobile version</a>
+          <a class="underline text-white p-2 inline-block">Your Account</a>
+          <a class="underline text-white p-2 inline-block">Make changes to your booking online</a>
+          <a class="underline text-white p-2 inline-block">Customer Service help</a>
+          <a class="underline text-white p-2 inline-block">Become an affiliate</a>
+          <a class="underline text-white p-2 inline-block">Booking.com for Business </a>
+        </div>
+        <p class="text-center p-3 lg:hidden text-white">Copyright © 1996–2022 Booking.com™. All rights reserved. </p>
+        <p class="text-center p-3 pt-0 lg:hidden text-white">Your reference ID is: <b>9ACA984</b></p>
+      </div>
+    </div>
+    <div class="container hidden lg:block">
+      <div class="flex text-[#0071c2]">
+        <div class="w-[20%] text-center">
+          <ul>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+          </ul>
+        </div>
+        <div class="w-[20%] text-center">
+          <ul>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+          </ul>
+        </div>
+        <div class="w-[20%] text-center">
+          <ul>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+          </ul>
+        </div>
+        <div class="w-[20%] text-center">
+          <ul>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+          </ul>
+        </div>
+        <div class="w-[20%] text-center">
+          <ul>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+            <li><a href="javascript:void(0)" class="text-sm">Countries</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="w-full">
+        <h1 class="text-[#0071c2] text-lg font-bold text-center hover:text-[#bc5b01]">Extranet login</h1>
+        <p class="mt-5 text-xs">Copyright © 1996–2022 Booking.com™. All rights reserved.</p>
+        <p class="text-center mt-5 text-xs">Booking.com is part of Booking Holdings Inc., the world leader in
+          online travel and related services. </p>
+      </div>
+      <div class="w-full lg:flex justify-center brands items-center hidden">
+        <img class="m-4"
+          src="https://cf.bstatic.com/static/img/tfl/group_logos/logo_booking/27c8d1832de6a3123b6ee45b59ae2f81b0d9d0d0.png"
+          alt="">
+        <img class="m-4"
+          src="https://cf.bstatic.com/static/img/tfl/group_logos/logo_priceline/f80e129541f2a952d470df2447373390f3dd4e44.png"
+          alt="">
+        <img class="m-4"
+          src="https://cf.bstatic.com/static/img/tfl/group_logos/logo_kayak/83ef7122074473a6566094e957ff834badb58ce6.png"
+          alt="">
+        <img class="m-4"
+          src="https://cf.bstatic.com/static/img/tfl/group_logos/logo_agoda/1c9191b6a3651bf030e41e99a153b64f449845ed.png"
+          alt="">
+        <img class="m-4"
+          src="https://cf.bstatic.com/static/img/tfl/group_logos/logo_rentalcars/6bc5ec89d870111592a378bbe7a2086f0b01abc4.png"
+          alt="">
+        <img class="m-4"
+          src="https://cf.bstatic.com/static/img/tfl/group_logos/logo_opentable/a4b50503eda6c15773d6e61c238230eb42fb050d.png"
+          alt="">
+
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal fixed h-screen w-screen !z-50 inset-0 hidden justify-center items-center bg-black bg-opacity-50">
+    <!-- modal -->
+    <div class="bg-white h-full w-full rounded shadow-lg">
+      <!-- modal header -->
+      <div class="px-4 py-2 flex justify-end">
+        <a href="" class="close-btn font-semibold text-2xl mt-4 mr-4">X</a>
+      </div>
+      <!-- modal body -->
+      <div class="p-3">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi facere vel temporibus amet ex, qui esse
+        eligendi ipsum explicabo quis porro aperiam eveniet dolorum in nulla eum quisquam voluptate iure!
+      </div>
+      <div class="flex justify-end items-center w-full border-t p-3">
+        <button class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white close-btn">close</button>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"
+  integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+  integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="module" src="./js/common.js"></script>
+
+</html>
